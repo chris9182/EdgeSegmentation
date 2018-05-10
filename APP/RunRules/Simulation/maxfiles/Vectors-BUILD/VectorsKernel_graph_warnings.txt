@@ -1,0 +1,13 @@
+*** After kernel graph-pass 'Init Graph' ***
+node "{HWFloat:8, 24}\n0x00000000; 0.0" (ID 779) has unconnected outputs: [value]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:96)
+	vectors.VectorsKernel.<init>(VectorsKernel.maxj:36)
+	vectors.VectorsManager.main(VectorsManager.maxj:20)
+	
+node "{HWFloat:8, 24}\n0x00000000; 0.0" (ID 780) has unconnected outputs: [value]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:96)
+	vectors.VectorsKernel.<init>(VectorsKernel.maxj:37)
+	vectors.VectorsManager.main(VectorsManager.maxj:20)
+	
