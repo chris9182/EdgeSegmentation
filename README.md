@@ -1,3 +1,3 @@
-Linear Regression
+Edge Segmentation
 
-This simple project implements the calculation of the linear regression coefficient r on a Maxeler accelerator.
+This simple project implements the manipulation of ppm files for edge segmentation on a Maxeler accelerator.
