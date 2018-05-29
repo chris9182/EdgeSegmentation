@@ -1,0 +1,28 @@
+/**
+ * Document: MaxCompiler Tutorial (maxcompiler-tutorial.pdf)
+ * Chapter: 8      Example: 5      Name: Two-dimensional average dynamic
+ * MaxFile name: TwoDAverageDynamic
+ * Summary:
+ *       Manager for kernel that averages within an 8-point window.
+ */
+package twodaveragedynamic;
+
+import com.maxeler.maxcompiler.v2.build.EngineParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager.IOType;
+
+class TwoDAverageDynamicManager {
+	private static int nxMax = 4096;
+
+	public static void main(String[] args) {
+		EngineParameters params = new EngineParameters(args);
+		Manager manager = new Manager(params);
+		Kernel kernel = new TwoDAverageDynamicKernel(manager.makeKernelParameters(), nxMax);
+		manager.setKernel(kernel);
+		manager.addMaxFileConstant("nxMax", nxMax);
+		manager.setIO(IOType.ALL_CPU);
+		manager.createSLiCinterface();
+		manager.build();
+	}
+}

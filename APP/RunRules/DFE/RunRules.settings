@@ -5,9 +5,9 @@
 <simulation enabled="false"/>
 <programArgument argument="MPPREndCT" value="4"></programArgument></common>
 <maxFiles>
-<maxFile buildName="Vectors" buildOrUseExisting="build">
+<maxFile buildName="TwoDAverageDynamic" buildOrUseExisting="build">
 <runConfiguration askBeforeAutoBuild="true">
-<mainClass>vectors.VectorsManager</mainClass>
+<mainClass>twodaveragedynamic.TwoDAverageDynamicManager</mainClass>
 <maxHeapSize>2</maxHeapSize>
 </runConfiguration>
 <selectEngineTarget enabled="false">MAIA</selectEngineTarget>
@@ -15,7 +15,7 @@
 </maxFiles>
 <cpuCode targetType="executable">
 <libraryName/>
-<exeName>Vectors</exeName>
+<exeName>TwoDAverageDynamic</exeName>
 <arguments/>
 <remoteExecution enabled="false">
 <remoteMachineName/>
@@ -23,7 +23,8 @@
 </remoteExecution>
 <customDefinitions>#This text will be included verbatim in the build process.Put here
 #anything you like - that said, it has be valid Make syntax
-USE_SLIC := 1</customDefinitions>
+USE_SLIC := 1
+</customDefinitions>
 </cpuCode>
 <simulator>
 <deleteDRAM enabled="false"/>

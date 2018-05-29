@@ -1,0 +1,16 @@
+Warning (CONSTANT_ENCODING):
+Constant with value 1.0E16 does not fit exactly into type {HWOffsetFix:32, 0, TWOSCOMPLEMENT}:
+OVERFLOW, resulting value: 1.874919424E9
+Origin of related node:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:96)
+twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:31)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+
+Warning (CONSTANT_ENCODING):
+Constant with value 1.0E16 does not fit exactly into type {HWOffsetFix:32, 0, TWOSCOMPLEMENT}:
+OVERFLOW, resulting value: 1.874919424E9
+Origin of related node:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:96)
+twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:59)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+

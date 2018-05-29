@@ -1,0 +1,1757 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Graph version="2015.2" pxg_version="1" maxfile_name="TwoDAverageDynamic" design_name="TwoDAverageDynamicKernel" compilation_phase="final-simulation" has_longest_path="false">
+	<Node group="[]" id="284" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="io_outStream_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (io_outStream_force_disabled)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:816)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:66)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Name>io_outStream_force_disabled</Name>
+	</Node>
+	<Edge dst_node_id="285" dst_node_input="a" src_node_id="284" src_node_output="io_outStream_force_disabled" />
+	<Node group="[]" id="285" isControl="true" isVisible="false" pipelineFactor="0.0" type="NodeNot">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>~</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:816)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:66)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="287" dst_node_input="output_control" src_node_id="285" src_node_output="result" />
+	<Node group="[]" id="381" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:546)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:26)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="6" dst_node_input="enable" src_node_id="381" src_node_output="value" />
+	<Node group="[]" id="380" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(33, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:33, 0, UNSIGNED}\n0x000001000; 4096.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:546)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:26)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>000000000000000000001000000000000</Value>
+		<HexValue>0x000001000</HexValue>
+		<NumericValue>4096.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="6" dst_node_input="max" src_node_id="380" src_node_output="value" />
+	<Node group="[]" id="6" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(33, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:546)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:26)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="238" dst_node_input="a" src_node_id="6" src_node_output="count" />
+	<Edge dst_node_id="210" dst_node_input="a" src_node_id="6" src_node_output="count" />
+	<Edge dst_node_id="181" dst_node_input="a" src_node_id="6" src_node_output="count" />
+	<Edge dst_node_id="80" dst_node_input="numerator" src_node_id="6" src_node_output="count" />
+	<Edge dst_node_id="51" dst_node_input="numerator" src_node_id="6" src_node_output="count" />
+	<Edge dst_node_id="22" dst_node_input="numerator" src_node_id="6" src_node_output="count" />
+	<Edge dst_node_id="292" dst_node_input="data" src_node_id="6" src_node_output="count" />
+	<Node group="[]" id="379" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="238" dst_node_input="b" src_node_id="379" src_node_output="value" />
+	<Node group="[]" id="238" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>+</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="240" dst_node_input="numerator" src_node_id="238" src_node_output="result" />
+	<Node group="[]" id="3" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="nx" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Scalar input (nx)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:24)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Name>nx</Name>
+	</Node>
+	<Edge dst_node_id="21" dst_node_input="i" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="50" dst_node_input="i" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="79" dst_node_input="i" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="182" dst_node_input="i" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="211" dst_node_input="i" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="239" dst_node_input="i" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="260" dst_node_input="a" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="327" dst_node_input="a" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="176" dst_node_input="input" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="329" dst_node_input="a" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="91" dst_node_input="a" src_node_id="3" src_node_output="nx" />
+	<Edge dst_node_id="331" dst_node_input="a" src_node_id="3" src_node_output="nx" />
+	<Node group="[]" id="239" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="240" dst_node_input="denominator" src_node_id="239" src_node_output="o" />
+	<Node group="[]" id="240" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDivMod">
+		<Input name="numerator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="denominator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="quotient" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="remainder" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>NodeDivMod</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="241" dst_node_input="i" src_node_id="240" src_node_output="remainder" />
+	<Node group="[]" id="241" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="242" dst_node_input="a" src_node_id="241" src_node_output="o" />
+	<Node group="[]" id="8" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:96)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:32)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="19" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="24" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="29" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="48" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="53" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="58" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="77" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="82" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="87" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="115" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="144" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="171" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="185" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="188" dst_node_input="option0" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="199" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="214" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="217" dst_node_input="option0" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="228" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="242" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="245" dst_node_input="option0" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="256" dst_node_input="b" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="171" dst_node_input="a" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="144" dst_node_input="a" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="115" dst_node_input="a" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="77" dst_node_input="a" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="86" dst_node_input="option0" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="48" dst_node_input="a" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="57" dst_node_input="option0" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="19" dst_node_input="a" src_node_id="8" src_node_output="value" />
+	<Edge dst_node_id="28" dst_node_input="option0" src_node_id="8" src_node_output="value" />
+	<Node group="[]" id="242" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="245" dst_node_input="sel" src_node_id="242" src_node_output="result" />
+	<Node group="[]" id="7" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x6fc10000; 1.874919424E9</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:96)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:31)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>01101111110000010000000000000000</Value>
+		<HexValue>0x6fc10000</HexValue>
+		<NumericValue>1.874919424E9</NumericValue>
+	</Node>
+	<Edge dst_node_id="28" dst_node_input="option1" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="37" dst_node_input="option0" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="57" dst_node_input="option1" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="66" dst_node_input="option0" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="86" dst_node_input="option1" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="94" dst_node_input="option0" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="123" dst_node_input="option0" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="150" dst_node_input="option0" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="178" dst_node_input="option0" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="188" dst_node_input="option1" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="207" dst_node_input="option0" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="217" dst_node_input="option1" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="235" dst_node_input="option0" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="245" dst_node_input="option1" src_node_id="7" src_node_output="value" />
+	<Edge dst_node_id="263" dst_node_input="option0" src_node_id="7" src_node_output="value" />
+	<Node group="[]" id="245" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:41)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="256" dst_node_input="a" src_node_id="245" src_node_output="result" />
+	<Node group="[]" id="256" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="334" dst_node_input="input" src_node_id="256" src_node_output="result" />
+	<Node group="[]" id="334" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="16" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(16)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="263" dst_node_input="sel" src_node_id="334" src_node_output="output" />
+	<Node group="[]" id="0" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="io_inStream_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (io_inStream_force_disabled)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:606)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:23)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Name>io_inStream_force_disabled</Name>
+	</Node>
+	<Edge dst_node_id="1" dst_node_input="a" src_node_id="0" src_node_output="io_inStream_force_disabled" />
+	<Node group="[]" id="1" isControl="true" isVisible="false" pipelineFactor="0.0" type="NodeNot">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>~</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:606)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:23)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="2" dst_node_input="enable" src_node_id="1" src_node_output="result" />
+	<Node group="[]" id="2" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeInput">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="5" name="data" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Input(inStream)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:606)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:23)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Name>inStream</Name>
+	</Node>
+	<Edge dst_node_id="93" dst_node_input="input" src_node_id="2" src_node_output="data" />
+	<Edge dst_node_id="339" dst_node_input="input" src_node_id="2" src_node_output="data" />
+	<Node group="[]" id="339" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="5" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(5)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="177" dst_node_input="input" src_node_id="339" src_node_output="output" />
+	<Edge dst_node_id="364" dst_node_input="input" src_node_id="339" src_node_output="output" />
+	<Node group="[]" id="364" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="5" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(5)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="262" dst_node_input="input" src_node_id="364" src_node_output="output" />
+	<Edge dst_node_id="365" dst_node_input="input" src_node_id="364" src_node_output="output" />
+	<Node group="[]" id="378" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="260" dst_node_input="b" src_node_id="378" src_node_output="value" />
+	<Node group="[]" id="260" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="261" dst_node_input="input" src_node_id="260" src_node_output="result" />
+	<Node group="[]" id="261" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4097" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4097</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="262" dst_node_input="offset" src_node_id="261" src_node_output="output" />
+	<Node group="[]" id="262" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4100" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [0, 4097]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<MinOffset>0</MinOffset>
+		<MaxOffset>4097</MaxOffset>
+	</Node>
+	<Edge dst_node_id="263" dst_node_input="option1" src_node_id="262" src_node_output="output" />
+	<Node group="[]" id="263" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="281" dst_node_input="a" src_node_id="263" src_node_output="result" />
+	<Edge dst_node_id="363" dst_node_input="input" src_node_id="263" src_node_output="result" />
+	<Node group="[]" id="377" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="210" dst_node_input="b" src_node_id="377" src_node_output="value" />
+	<Node group="[]" id="210" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>+</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="212" dst_node_input="numerator" src_node_id="210" src_node_output="result" />
+	<Node group="[]" id="211" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="212" dst_node_input="denominator" src_node_id="211" src_node_output="o" />
+	<Node group="[]" id="212" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDivMod">
+		<Input name="numerator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="denominator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="quotient" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="remainder" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>NodeDivMod</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="213" dst_node_input="i" src_node_id="212" src_node_output="remainder" />
+	<Node group="[]" id="213" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="214" dst_node_input="a" src_node_id="213" src_node_output="o" />
+	<Node group="[]" id="214" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="217" dst_node_input="sel" src_node_id="214" src_node_output="result" />
+	<Node group="[]" id="217" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:41)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="228" dst_node_input="a" src_node_id="217" src_node_output="result" />
+	<Node group="[]" id="228" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="336" dst_node_input="input" src_node_id="228" src_node_output="result" />
+	<Node group="[]" id="336" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="13" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(13)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="235" dst_node_input="sel" src_node_id="336" src_node_output="output" />
+	<Node group="[]" id="365" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4081" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(4081)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="34" dst_node_input="input" src_node_id="365" src_node_output="output" />
+	<Edge dst_node_id="366" dst_node_input="input" src_node_id="365" src_node_output="output" />
+	<Node group="[]" id="366" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="63" dst_node_input="input" src_node_id="366" src_node_output="output" />
+	<Edge dst_node_id="367" dst_node_input="input" src_node_id="366" src_node_output="output" />
+	<Node group="[]" id="367" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(4)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="120" dst_node_input="input" src_node_id="367" src_node_output="output" />
+	<Edge dst_node_id="368" dst_node_input="input" src_node_id="367" src_node_output="output" />
+	<Node group="[]" id="368" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="5" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(5)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="150" dst_node_input="option1" src_node_id="368" src_node_output="output" />
+	<Edge dst_node_id="369" dst_node_input="input" src_node_id="368" src_node_output="output" />
+	<Node group="[]" id="369" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="234" dst_node_input="input" src_node_id="369" src_node_output="output" />
+	<Edge dst_node_id="204" dst_node_input="input" src_node_id="369" src_node_output="output" />
+	<Node group="[]" id="310" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="234" dst_node_input="offset" src_node_id="310" src_node_output="value" />
+	<Node group="[]" id="234" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [0, 1]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<MinOffset>0</MinOffset>
+		<MaxOffset>1</MaxOffset>
+	</Node>
+	<Edge dst_node_id="235" dst_node_input="option1" src_node_id="234" src_node_output="output" />
+	<Node group="[]" id="235" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="359" dst_node_input="input" src_node_id="235" src_node_output="result" />
+	<Node group="[]" id="359" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="279" dst_node_input="a" src_node_id="359" src_node_output="output" />
+	<Edge dst_node_id="370" dst_node_input="input" src_node_id="359" src_node_output="output" />
+	<Node group="[]" id="376" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="181" dst_node_input="b" src_node_id="376" src_node_output="value" />
+	<Node group="[]" id="181" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>+</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="183" dst_node_input="numerator" src_node_id="181" src_node_output="result" />
+	<Node group="[]" id="182" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="183" dst_node_input="denominator" src_node_id="182" src_node_output="o" />
+	<Node group="[]" id="183" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDivMod">
+		<Input name="numerator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="denominator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="quotient" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="remainder" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>NodeDivMod</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="184" dst_node_input="i" src_node_id="183" src_node_output="remainder" />
+	<Node group="[]" id="184" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="185" dst_node_input="a" src_node_id="184" src_node_output="o" />
+	<Node group="[]" id="185" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:42)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="188" dst_node_input="sel" src_node_id="185" src_node_output="result" />
+	<Node group="[]" id="188" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:41)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="199" dst_node_input="a" src_node_id="188" src_node_output="result" />
+	<Node group="[]" id="199" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="338" dst_node_input="input" src_node_id="199" src_node_output="result" />
+	<Node group="[]" id="338" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="12" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(12)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="207" dst_node_input="sel" src_node_id="338" src_node_output="output" />
+	<Node group="[]" id="204" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4095" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4095</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="206" dst_node_input="input" src_node_id="204" src_node_output="output" />
+	<Node group="[]" id="327" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeNeg">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(33, 0, TWOSCOMPLEMENT)" />
+		<Text>(-)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1003)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="328" dst_node_input="i" src_node_id="327" src_node_output="result" />
+	<Node group="[]" id="328" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(33, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1003)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="203" dst_node_input="a" src_node_id="328" src_node_output="o" />
+	<Node group="[]" id="375" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="203" dst_node_input="b" src_node_id="375" src_node_output="value" />
+	<Node group="[]" id="203" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="205" dst_node_input="input" src_node_id="203" src_node_output="result" />
+	<Node group="[]" id="205" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4095" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4095</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="206" dst_node_input="offset" src_node_id="205" src_node_output="output" />
+	<Node group="[]" id="206" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4098" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [-4095, 0]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<MinOffset>-4095</MinOffset>
+		<MaxOffset>0</MaxOffset>
+	</Node>
+	<Edge dst_node_id="207" dst_node_input="option1" src_node_id="206" src_node_output="output" />
+	<Node group="[]" id="207" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="277" dst_node_input="a" src_node_id="207" src_node_output="result" />
+	<Edge dst_node_id="358" dst_node_input="input" src_node_id="207" src_node_output="result" />
+	<Node group="[]" id="171" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="178" dst_node_input="sel" src_node_id="171" src_node_output="result" />
+	<Node group="[]" id="176" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4096" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4096</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="177" dst_node_input="offset" src_node_id="176" src_node_output="output" />
+	<Node group="[]" id="177" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4099" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [0, 4096]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<MinOffset>0</MinOffset>
+		<MaxOffset>4096</MaxOffset>
+	</Node>
+	<Edge dst_node_id="178" dst_node_input="option1" src_node_id="177" src_node_output="output" />
+	<Node group="[]" id="178" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="275" dst_node_input="a" src_node_id="178" src_node_output="result" />
+	<Edge dst_node_id="356" dst_node_input="input" src_node_id="178" src_node_output="result" />
+	<Node group="[]" id="144" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="150" dst_node_input="sel" src_node_id="144" src_node_output="result" />
+	<Node group="[]" id="150" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="273" dst_node_input="a" src_node_id="150" src_node_output="result" />
+	<Edge dst_node_id="354" dst_node_input="input" src_node_id="150" src_node_output="result" />
+	<Node group="[]" id="115" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="123" dst_node_input="sel" src_node_id="115" src_node_output="result" />
+	<Node group="[]" id="120" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4096" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4096</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="122" dst_node_input="input" src_node_id="120" src_node_output="output" />
+	<Node group="[]" id="329" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeNeg">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(33, 0, TWOSCOMPLEMENT)" />
+		<Text>(-)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1003)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="330" dst_node_input="i" src_node_id="329" src_node_output="result" />
+	<Node group="[]" id="330" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(33, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1003)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="121" dst_node_input="input" src_node_id="330" src_node_output="o" />
+	<Node group="[]" id="121" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4096" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4096</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="122" dst_node_input="offset" src_node_id="121" src_node_output="output" />
+	<Node group="[]" id="122" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4099" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [-4096, 0]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<MinOffset>-4096</MinOffset>
+		<MaxOffset>0</MaxOffset>
+	</Node>
+	<Edge dst_node_id="123" dst_node_input="option1" src_node_id="122" src_node_output="output" />
+	<Node group="[]" id="123" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="271" dst_node_input="a" src_node_id="123" src_node_output="result" />
+	<Edge dst_node_id="352" dst_node_input="input" src_node_id="123" src_node_output="result" />
+	<Node group="[]" id="77" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:47)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="85" dst_node_input="a" src_node_id="77" src_node_output="result" />
+	<Node group="[]" id="79" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="80" dst_node_input="denominator" src_node_id="79" src_node_output="o" />
+	<Node group="[]" id="80" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDivMod">
+		<Input name="numerator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="denominator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="quotient" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="remainder" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>NodeDivMod</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="81" dst_node_input="i" src_node_id="80" src_node_output="remainder" />
+	<Node group="[]" id="81" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="82" dst_node_input="a" src_node_id="81" src_node_output="o" />
+	<Node group="[]" id="82" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="85" dst_node_input="b" src_node_id="82" src_node_output="result" />
+	<Node group="[]" id="85" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:530)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:47)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="86" dst_node_input="sel" src_node_id="85" src_node_output="result" />
+	<Node group="[]" id="86" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:46)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="87" dst_node_input="a" src_node_id="86" src_node_output="result" />
+	<Node group="[]" id="87" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="342" dst_node_input="input" src_node_id="87" src_node_output="result" />
+	<Node group="[]" id="342" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="4" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(4)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="94" dst_node_input="sel" src_node_id="342" src_node_output="output" />
+	<Node group="[]" id="374" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>11111111111111111111111111111111</Value>
+		<HexValue>0xffffffff</HexValue>
+		<NumericValue>-1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="91" dst_node_input="b" src_node_id="374" src_node_output="value" />
+	<Node group="[]" id="91" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="92" dst_node_input="input" src_node_id="91" src_node_output="result" />
+	<Node group="[]" id="92" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4095" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4095</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="93" dst_node_input="offset" src_node_id="92" src_node_output="output" />
+	<Node group="[]" id="93" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4098" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [0, 4095]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<MinOffset>0</MinOffset>
+		<MaxOffset>4095</MaxOffset>
+	</Node>
+	<Edge dst_node_id="94" dst_node_input="option1" src_node_id="93" src_node_output="output" />
+	<Node group="[]" id="94" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="269" dst_node_input="a" src_node_id="94" src_node_output="result" />
+	<Edge dst_node_id="350" dst_node_input="input" src_node_id="94" src_node_output="result" />
+	<Node group="[]" id="48" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:47)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="56" dst_node_input="a" src_node_id="48" src_node_output="result" />
+	<Node group="[]" id="50" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="51" dst_node_input="denominator" src_node_id="50" src_node_output="o" />
+	<Node group="[]" id="51" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDivMod">
+		<Input name="numerator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="denominator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="quotient" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="remainder" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>NodeDivMod</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="52" dst_node_input="i" src_node_id="51" src_node_output="remainder" />
+	<Node group="[]" id="52" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="53" dst_node_input="a" src_node_id="52" src_node_output="o" />
+	<Node group="[]" id="53" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="56" dst_node_input="b" src_node_id="53" src_node_output="result" />
+	<Node group="[]" id="56" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:530)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:47)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="57" dst_node_input="sel" src_node_id="56" src_node_output="result" />
+	<Node group="[]" id="57" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:46)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="58" dst_node_input="a" src_node_id="57" src_node_output="result" />
+	<Node group="[]" id="58" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="344" dst_node_input="input" src_node_id="58" src_node_output="result" />
+	<Node group="[]" id="344" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="66" dst_node_input="sel" src_node_id="344" src_node_output="output" />
+	<Node group="[]" id="63" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="65" dst_node_input="input" src_node_id="63" src_node_output="output" />
+	<Node group="[]" id="325" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>11111111111111111111111111111111</Value>
+		<HexValue>0xffffffff</HexValue>
+		<NumericValue>-1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="65" dst_node_input="offset" src_node_id="325" src_node_output="value" />
+	<Node group="[]" id="65" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [-1, 0]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<MinOffset>-1</MinOffset>
+		<MaxOffset>0</MaxOffset>
+	</Node>
+	<Edge dst_node_id="66" dst_node_input="option1" src_node_id="65" src_node_output="output" />
+	<Node group="[]" id="66" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="267" dst_node_input="a" src_node_id="66" src_node_output="result" />
+	<Edge dst_node_id="348" dst_node_input="input" src_node_id="66" src_node_output="result" />
+	<Node group="[]" id="19" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:47)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="27" dst_node_input="a" src_node_id="19" src_node_output="result" />
+	<Node group="[]" id="21" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="22" dst_node_input="denominator" src_node_id="21" src_node_output="o" />
+	<Node group="[]" id="22" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDivMod">
+		<Input name="numerator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="denominator" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="quotient" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="33" name="remainder" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>NodeDivMod</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="23" dst_node_input="i" src_node_id="22" src_node_output="remainder" />
+	<Node group="[]" id="23" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:173)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="24" dst_node_input="a" src_node_id="23" src_node_output="o" />
+	<Node group="[]" id="24" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:48)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="27" dst_node_input="b" src_node_id="24" src_node_output="result" />
+	<Node group="[]" id="27" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:530)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:47)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="28" dst_node_input="sel" src_node_id="27" src_node_output="result" />
+	<Node group="[]" id="28" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:46)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="29" dst_node_input="a" src_node_id="28" src_node_output="result" />
+	<Node group="[]" id="29" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="37" dst_node_input="sel" src_node_id="29" src_node_output="result" />
+	<Node group="[]" id="34" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4097" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4097</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="36" dst_node_input="input" src_node_id="34" src_node_output="output" />
+	<Node group="[]" id="331" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeNeg">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(33, 0, TWOSCOMPLEMENT)" />
+		<Text>(-)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1003)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="332" dst_node_input="i" src_node_id="331" src_node_output="result" />
+	<Node group="[]" id="332" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(33, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1003)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="33" dst_node_input="a" src_node_id="332" src_node_output="o" />
+	<Node group="[]" id="373" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>11111111111111111111111111111111</Value>
+		<HexValue>0xffffffff</HexValue>
+		<NumericValue>-1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="33" dst_node_input="b" src_node_id="373" src_node_output="value" />
+	<Node group="[]" id="33" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:891)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="35" dst_node_input="input" src_node_id="33" src_node_output="result" />
+	<Node group="[]" id="35" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4097" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4097</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="36" dst_node_input="offset" src_node_id="35" src_node_output="output" />
+	<Node group="[]" id="36" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4100" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [-4097, 0]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:290)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:53)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<MinOffset>-4097</MinOffset>
+		<MaxOffset>0</MaxOffset>
+	</Node>
+	<Edge dst_node_id="37" dst_node_input="option1" src_node_id="36" src_node_output="output" />
+	<Node group="[]" id="37" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:52)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="265" dst_node_input="a" src_node_id="37" src_node_output="result" />
+	<Edge dst_node_id="346" dst_node_input="input" src_node_id="37" src_node_output="result" />
+	<Node group="[]" id="264" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x6fc10000; 1.874919424E9</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:96)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:59)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Value>01101111110000010000000000000000</Value>
+		<HexValue>0x6fc10000</HexValue>
+		<NumericValue>1.874919424E9</NumericValue>
+	</Node>
+	<Edge dst_node_id="265" dst_node_input="b" src_node_id="264" src_node_output="value" />
+	<Edge dst_node_id="266" dst_node_input="option0" src_node_id="264" src_node_output="value" />
+	<Node group="[]" id="265" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:830)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="266" dst_node_input="sel" src_node_id="265" src_node_output="result" />
+	<Node group="[]" id="346" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="266" dst_node_input="option1" src_node_id="346" src_node_output="output" />
+	<Node group="[]" id="266" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="267" dst_node_input="b" src_node_id="266" src_node_output="result" />
+	<Edge dst_node_id="347" dst_node_input="input" src_node_id="266" src_node_output="result" />
+	<Node group="[]" id="267" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:830)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="268" dst_node_input="sel" src_node_id="267" src_node_output="result" />
+	<Node group="[]" id="347" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="268" dst_node_input="option0" src_node_id="347" src_node_output="output" />
+	<Node group="[]" id="348" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="268" dst_node_input="option1" src_node_id="348" src_node_output="output" />
+	<Node group="[]" id="268" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="269" dst_node_input="b" src_node_id="268" src_node_output="result" />
+	<Edge dst_node_id="349" dst_node_input="input" src_node_id="268" src_node_output="result" />
+	<Node group="[]" id="269" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:830)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="270" dst_node_input="sel" src_node_id="269" src_node_output="result" />
+	<Node group="[]" id="349" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="270" dst_node_input="option0" src_node_id="349" src_node_output="output" />
+	<Node group="[]" id="350" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="270" dst_node_input="option1" src_node_id="350" src_node_output="output" />
+	<Node group="[]" id="270" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="271" dst_node_input="b" src_node_id="270" src_node_output="result" />
+	<Edge dst_node_id="351" dst_node_input="input" src_node_id="270" src_node_output="result" />
+	<Node group="[]" id="271" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:830)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="272" dst_node_input="sel" src_node_id="271" src_node_output="result" />
+	<Node group="[]" id="351" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="272" dst_node_input="option0" src_node_id="351" src_node_output="output" />
+	<Node group="[]" id="352" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="272" dst_node_input="option1" src_node_id="352" src_node_output="output" />
+	<Node group="[]" id="272" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="273" dst_node_input="b" src_node_id="272" src_node_output="result" />
+	<Edge dst_node_id="353" dst_node_input="input" src_node_id="272" src_node_output="result" />
+	<Node group="[]" id="273" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:830)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="274" dst_node_input="sel" src_node_id="273" src_node_output="result" />
+	<Node group="[]" id="353" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="274" dst_node_input="option0" src_node_id="353" src_node_output="output" />
+	<Node group="[]" id="354" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="274" dst_node_input="option1" src_node_id="354" src_node_output="output" />
+	<Node group="[]" id="274" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="275" dst_node_input="b" src_node_id="274" src_node_output="result" />
+	<Edge dst_node_id="355" dst_node_input="input" src_node_id="274" src_node_output="result" />
+	<Node group="[]" id="275" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:830)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="276" dst_node_input="sel" src_node_id="275" src_node_output="result" />
+	<Node group="[]" id="355" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="276" dst_node_input="option0" src_node_id="355" src_node_output="output" />
+	<Node group="[]" id="356" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="276" dst_node_input="option1" src_node_id="356" src_node_output="output" />
+	<Node group="[]" id="276" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="277" dst_node_input="b" src_node_id="276" src_node_output="result" />
+	<Edge dst_node_id="357" dst_node_input="input" src_node_id="276" src_node_output="result" />
+	<Node group="[]" id="277" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:830)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="278" dst_node_input="sel" src_node_id="277" src_node_output="result" />
+	<Node group="[]" id="357" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="278" dst_node_input="option0" src_node_id="357" src_node_output="output" />
+	<Node group="[]" id="358" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="278" dst_node_input="option1" src_node_id="358" src_node_output="output" />
+	<Node group="[]" id="278" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="279" dst_node_input="b" src_node_id="278" src_node_output="result" />
+	<Edge dst_node_id="360" dst_node_input="input" src_node_id="278" src_node_output="result" />
+	<Node group="[]" id="279" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:830)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="280" dst_node_input="sel" src_node_id="279" src_node_output="result" />
+	<Node group="[]" id="360" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="280" dst_node_input="option0" src_node_id="360" src_node_output="output" />
+	<Node group="[]" id="370" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="280" dst_node_input="option1" src_node_id="370" src_node_output="output" />
+	<Node group="[]" id="280" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="281" dst_node_input="b" src_node_id="280" src_node_output="result" />
+	<Edge dst_node_id="362" dst_node_input="input" src_node_id="280" src_node_output="result" />
+	<Node group="[]" id="281" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:830)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="282" dst_node_input="sel" src_node_id="281" src_node_output="result" />
+	<Node group="[]" id="362" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="282" dst_node_input="option0" src_node_id="362" src_node_output="output" />
+	<Node group="[]" id="363" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="282" dst_node_input="option1" src_node_id="363" src_node_output="output" />
+	<Node group="[]" id="282" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1160)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:62)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="287" dst_node_input="data" src_node_id="282" src_node_output="result" />
+	<Node group="[]" id="287" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeOutput">
+		<Input name="output_control" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Output(outStream)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:816)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:66)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Name>outStream</Name>
+	</Node>
+	<Node group="[]" id="289" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="io_counter_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (io_counter_force_disabled)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:816)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:68)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Name>io_counter_force_disabled</Name>
+	</Node>
+	<Edge dst_node_id="290" dst_node_input="a" src_node_id="289" src_node_output="io_counter_force_disabled" />
+	<Node group="[]" id="290" isControl="true" isVisible="false" pipelineFactor="0.0" type="NodeNot">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>~</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:816)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:68)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="292" dst_node_input="output_control" src_node_id="290" src_node_output="result" />
+	<Node group="[]" id="292" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeOutput">
+		<Input name="output_control" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>Output(counter)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:816)
+twodaveragedynamic.TwoDAverageDynamicKernel.&lt;init&gt;(TwoDAverageDynamicKernel.maxj:68)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)</OriginStackTrace>
+		<Name>counter</Name>
+	</Node>
+	<Node group="[]" id="297" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="298" dst_node_input="load" src_node_id="297" src_node_output="value" />
+	<Node group="[]" id="372" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="295" dst_node_input="enable" src_node_id="372" src_node_output="value" />
+	<Node group="[]" id="294" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+		<Value>1000000000000000000000000000000000000000000000000</Value>
+		<HexValue>0x1000000000000</HexValue>
+		<NumericValue>2.81474976710656E14</NumericValue>
+	</Node>
+	<Edge dst_node_id="295" dst_node_input="max" src_node_id="294" src_node_output="value" />
+	<Node group="[]" id="295" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="296" dst_node_input="input" src_node_id="295" src_node_output="count" />
+	<Node group="[]" id="296" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>stream offset: 1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="298" dst_node_input="data" src_node_id="296" src_node_output="output" />
+	<Node group="[]" id="298" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeOutputMappedReg">
+		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>Scalar output (current_run_cycle_count)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+		<Name>current_run_cycle_count</Name>
+	</Node>
+	<Node group="[]" id="371" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="301" dst_node_input="enable" src_node_id="371" src_node_output="value" />
+	<Node group="[]" id="300" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+		<Value>1000000000000000000000000000000000000000000000000</Value>
+		<HexValue>0x1000000000000</HexValue>
+		<NumericValue>2.81474976710656E14</NumericValue>
+	</Node>
+	<Edge dst_node_id="301" dst_node_input="max" src_node_id="300" src_node_output="value" />
+	<Node group="[]" id="301" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="304" dst_node_input="a" src_node_id="301" src_node_output="count" />
+	<Node group="[]" id="303" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="run_cycle_count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>Scalar input (run_cycle_count)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+		<Name>run_cycle_count</Name>
+	</Node>
+	<Edge dst_node_id="304" dst_node_input="b" src_node_id="303" src_node_output="run_cycle_count" />
+	<Node group="[]" id="304" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="302" dst_node_input="start" src_node_id="304" src_node_output="result" />
+	<Node group="[]" id="302" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeFlush">
+		<Input name="start" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>flush on trigger</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:373)
+twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:26)</OriginStackTrace>
+	</Node>
+</Graph>

@@ -1,0 +1,403 @@
+*** After kernel graph-pass 'Init Graph' ***
+node "NodeDivMod" (ID 13) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 22) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 42) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 51) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 71) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 80) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 99) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 108) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 128) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 137) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 155) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 164) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 183) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 192) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 212) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 221) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 240) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 249) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+*** After kernel graph-pass 'Init Graph' ***
+node "NodeDivMod" (ID 240) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 249) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 212) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 221) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 183) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 192) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 155) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 164) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 128) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 137) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 99) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 108) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 71) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 80) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 42) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 51) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 13) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 22) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+*** After kernel graph-pass 'FoldConstantsPass' ***
+node "NodeDivMod" (ID 240) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 212) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 183) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 80) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 51) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 22) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+*** After kernel graph-pass 'OptimiseNodesPass' ***
+node "NodeDivMod" (ID 240) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 212) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 183) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 80) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 51) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 22) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+*** After kernel graph-pass 'ScheduleApplier' ***
+node "NodeDivMod" (ID 240) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 212) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 183) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 80) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 51) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 22) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+*** After kernel graph-pass 'TapFIFOsPass' ***
+node "NodeDivMod" (ID 240) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 212) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 183) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 80) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 51) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 22) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+*** After kernel graph-pass 'RemoveUntypedConstants' ***
+node "NodeDivMod" (ID 240) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 212) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 183) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:42)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 80) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 51) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	
+node "NodeDivMod" (ID 22) has unconnected outputs: [quotient]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.divMod(KernelMath.java:776)
+	twodaveragedynamic.TwoDAverageDynamicKernel.<init>(TwoDAverageDynamicKernel.maxj:48)
+	twodaveragedynamic.TwoDAverageDynamicManager.main(TwoDAverageDynamicManager.maxj:21)
+	

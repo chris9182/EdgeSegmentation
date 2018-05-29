@@ -49,20 +49,20 @@ build: maxfiles
 maxfiles: $(MAXFILES_MAX)
 
 #
-# MaxFile: Vectors
+# MaxFile: TwoDAverageDynamic
 #
 
 
-BUILDNAME_MAXFILE_1:=Vectors
-MAXFILE_1:=Vectors.max
+BUILDNAME_MAXFILE_1:=TwoDAverageDynamic
+MAXFILE_1:=TwoDAverageDynamic.max
 
-include/Vectors.h: maxfiles/Vectors.h
+include/TwoDAverageDynamic.h: maxfiles/TwoDAverageDynamic.h
 	cp $< $@
 
-maxfiles/Vectors.max maxfiles/Vectors.h:
+maxfiles/TwoDAverageDynamic.max maxfiles/TwoDAverageDynamic.h:
 # Ensure that maxfiles do not get build by this Makefile when running in MaxIDE
 ifndef MAXIDE_RUN
-	test -f $@ || env  MAX_BUILDPARAMS=" DFEModel=MAIA  target=DFE  maxFileName=Vectors "  ant -v -f Vectors.xml
+	test -f $@ || env  MAX_BUILDPARAMS=" DFEModel=MAIA  target=DFE  maxFileName=TwoDAverageDynamic "  ant -v -f TwoDAverageDynamic.xml
 else
 	test -f $@ || ( echo 'Maxfile unavailable: $@' >/dev/stderr ; exit 1 )
 endif

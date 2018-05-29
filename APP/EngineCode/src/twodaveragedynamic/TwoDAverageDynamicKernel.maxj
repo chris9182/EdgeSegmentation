@@ -1,0 +1,70 @@
+/**
+ * Document: MaxCompiler Tutorial (maxcompiler-tutorial.pdf)
+ * Chapter: 8      Example: 5      Name: Two-dimensional average dynamic
+ * MaxFile name: TwoDAverageDynamic
+ * Summary:
+ *       Kernel that averages within an 8-point window.
+ */
+
+package twodaveragedynamic;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.*;
+
+class TwoDAverageDynamicKernel extends Kernel {
+
+	TwoDAverageDynamicKernel(KernelParameters parameters, int nxMax) {
+		super(parameters);
+
+		// Input
+		DFEVar inStream = io.input("inStream", dfeInt(32));
+		DFEVar nx = io.scalarInput("nx", dfeInt(32));
+	
+        DFEVar cnt=control.count.simpleCounter(32, nxMax);
+        
+		// Extract 8 point window around current point
+		
+		
+		DFEVar err = constant.var(dfeInt(32), +10e15);
+		DFEVar ok = constant.var(dfeInt(32), 0);
+		
+		DFEVar window[] = new DFEVar[9];
+		int i = 0;
+		for (int x=-1; x<=1; x++)
+			for (int y=-1; y<=1; y++) {
+				// Create a dynamic offset for y*nx + x. Need to specify min and max offsets which
+				// we specify as min(0, maxOffset) and max(0, maxOffset)
+				int maxOffset = y * nxMax + x;
+				window[i] =  
+				((KernelMath.divMod(cnt.cast(dfeUInt(32))+1,nx.cast(dfeUInt(32))).getRemainder().cast(dfeInt(32)).eq(ok)&
+				(x==1))?
+				err:ok);
+				
+				window[i] = 
+				window[i].eq(ok)&
+				(KernelMath.divMod((cnt).cast(dfeUInt(32)),nx.cast(dfeUInt(32))).getRemainder().cast(dfeInt(32)).eq(ok)
+				&(x==-1))?
+				err:window[i];
+				
+				window[i] =  window[i].eq(ok)?
+				stream.offset(inStream, y * nx + x, Math.min(0, maxOffset), Math.max(0, maxOffset)):
+				err;
+			
+			    i++;
+			}
+
+		DFEVar res = constant.var(dfeInt(32), +10e15);
+		
+		for (DFEVar dfeVar : window) {
+			res = (dfeVar<res)?dfeVar:res;
+		}
+
+		//Output
+		io.output("outStream", res, dfeInt(32));
+
+		io.output("counter", cnt, dfeUInt(32));
+	}
+}

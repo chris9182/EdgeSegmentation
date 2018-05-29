@@ -1,8 +1,0 @@
-Warning (CONSTANT_ENCODING):
-Constant with value 1.0E-20 does not fit exactly into type {HWFloat:8, 24}:
-PRECISION_LOSS: not all of the constant's bits fit into new type, resulting value: 9.999999682655225E-21
-Origin of related node:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:881)
-vectors.VectorsKernel.<init>(VectorsKernel.maxj:50)
-vectors.VectorsManager.main(VectorsManager.maxj:20)
-

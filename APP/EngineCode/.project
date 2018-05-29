@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>tutorial-chap06-example3-vectors_EngineCode</name>
+	<name>tutorial-chap08-example5-twodaveragedynamic_EngineCode</name>
 	<comment></comment>
 	<manageMaxCompiler>true</manageMaxCompiler>
 	<manageMaxGenFD>true</manageMaxGenFD>
-	<manageMaxBlox>true</manageMaxBlox>
-	<maxelerVersion>1.0</maxelerVersion>
+	<manageMaxBlox>true</manageMaxBlox> <maxelerVersion>1.0</maxelerVersion>
 	<maxelerBuildSystemVersion>2</maxelerBuildSystemVersion>
 	<projects>
 	</projects>

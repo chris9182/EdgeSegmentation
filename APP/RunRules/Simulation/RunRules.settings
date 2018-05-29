@@ -5,9 +5,9 @@
 <simulation enabled="true"/>
 </common>
 <maxFiles>
-<maxFile buildName="Vectors" buildOrUseExisting="build">
+<maxFile buildName="TwoDAverageDynamic" buildOrUseExisting="build">
 <runConfiguration askBeforeAutoBuild="false">
-<mainClass>vectors.VectorsManager</mainClass>
+<mainClass>twodaveragedynamic.TwoDAverageDynamicManager</mainClass>
 <maxHeapSize>2</maxHeapSize>
 </runConfiguration>
 <selectEngineTarget enabled="false">MAIA</selectEngineTarget>
@@ -15,19 +15,19 @@
 </maxFiles>
 <cpuCode targetType="executable">
 <libraryName></libraryName>
-<exeName>Vectors</exeName>
+<exeName>TwoDAverageDynamic</exeName>
 <arguments></arguments>
 <remoteExecution enabled="false">
 <remoteMachineName></remoteMachineName>
 <scriptName></scriptName>
 </remoteExecution>
-<customDefinitions>#This text will be included verbatim in the build process.Put here&#x0A;#anything you like - that said, it has be valid Make syntax&#x0A;USE_SLIC := 1</customDefinitions>
+<customDefinitions>#This text will be included verbatim in the build process.Put here&#x0A;#anything you like - that said, it has be valid Make syntax&#x0A;USE_SLIC := 1&#x0A;</customDefinitions>
 </cpuCode>
 <simulator>
 <deleteDRAM enabled="false"/>
 <maxDRAMSize enabled="false"></maxDRAMSize>
 <DRAMFile enabled="false"></DRAMFile>
-<socketName>maxcvectors</socketName>
+<socketName>maxctwodavgdyn</socketName>
 <startStopScript enabled="false"/>
 <numberOfDevices>1</numberOfDevices>
 <ethernetOneEnabled enabled="false"/>

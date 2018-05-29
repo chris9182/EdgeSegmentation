@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>tutorial-chap06-example3-vectors_RunRules</name>
+	<name>tutorial-chap08-example5-twodaveragedynamic_RunRules</name>
 	<comment>Simulation</comment>
 	<manageMaxCompiler>true</manageMaxCompiler>
 	<manageMaxGenFD>true</manageMaxGenFD>

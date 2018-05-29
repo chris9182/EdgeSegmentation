@@ -1,0 +1,29 @@
+package twodaveragedynamic;
+
+public class TwoDFilterTester {
+
+	public static int nx = 9;
+	public static int ny = 9;
+	public static int nxMax = 4096;
+
+	public static void print2DData(String name, double data[], int nx, int ny) {
+				System.out.printf("\n%s\n", name);
+				for (int y = 0; y < ny; y++) {
+					for (int x = 0; x < nx; x++) {
+						System.out.printf("%8.2g", data[y*nx + x]);
+					}
+					System.out.printf("\n");
+				}
+			}
+
+	public static void generateTestData(double[] inputData, double[] expectedOutput) {
+		for (int i = 0; i < nx*ny; i++) {
+			inputData[i] = 0;
+			expectedOutput[i] = 0;
+		}
+		inputData[nx*(ny/2) + nx/2] = 9;
+		for (int x = -1; x <= 1; x++)
+			for (int y = -1; y <= 1; y++)
+				expectedOutput[nx*(ny/2 + y) + (nx/2 + x)] = 1.0;
+	}
+}
