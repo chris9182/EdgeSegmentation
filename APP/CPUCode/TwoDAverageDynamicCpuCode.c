@@ -132,6 +132,27 @@ void print2dData(int *data, char* name, int nx, int ny)
 	}
 }
 
+void getedges(int *data, int *edges, int nx, int ny)
+{
+    for (int i=0;i<nx;i++){edges[i]=0;edges[(ny-1)*nx+i]=0;}
+    for (int i=0;i<ny;i++){edges[i*nx]=0;edges[i*nx+nx-1]=0;}
+	for (int y = 1; y < ny-1; y++) {
+		for (int x = 1; x < nx-1; x++) {
+		    edges[y * nx + x]=255;
+			for(int i=-1;i<2;i++){
+		    	for(int j=-1;j<2;j++){
+    		    	if(data[y * nx + x]!=data[(y+i) * nx + (x+j)]){
+    		    	   edges[y * nx + x]=0;
+    		    	   goto next;
+    		    	}
+		    	}
+			}
+		   next:
+		   edges;
+		}
+	}
+}
+
 int main()
 {
 	printf("Loading image.\n");
@@ -145,12 +166,15 @@ int main()
 	int dataSize = width * height * sizeof(int32_t);
 	// Allocate a buffer for the output image
 	int32_t *outImage = malloc(dataSize);
+	int32_t *edges = malloc(dataSize);
 
 	printf("Running Kernel.\n");
 	TwoDAverageDynamic(width * height, width, inImage, counterOut, outImage);
-
-	printf("Saving image.\n");
 	writeImage("lena_edit.ppm", outImage, width, height, 1);
+    getedges(outImage, edges, width, height);
+	printf("Saving image.\n");
+	writeImage("lena_edges.ppm", edges, width, height, 1);
+	
 
 	printf("Exiting\n");
 	

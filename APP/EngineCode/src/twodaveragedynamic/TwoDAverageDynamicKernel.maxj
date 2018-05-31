@@ -18,25 +18,19 @@ class TwoDAverageDynamicKernel extends Kernel {
 
 	TwoDAverageDynamicKernel(KernelParameters parameters, int nxMax) {
 		super(parameters);
-
-		// Input
+		
 		DFEVar inStream = io.input("inStream", dfeInt(32));
+		DFEVar res = inStream;
 		DFEVar nx = io.scalarInput("nx", dfeInt(32));
-	
         DFEVar cnt=control.count.simpleCounter(32, nxMax);
         
-		// Extract 8 point window around current point
-		
-		
-		DFEVar err = constant.var(dfeInt(32), +10e15);
+		DFEVar err = inStream;
 		DFEVar ok = constant.var(dfeInt(32), 0);
 		
 		DFEVar window[] = new DFEVar[9];
 		int i = 0;
 		for (int x=-1; x<=1; x++)
 			for (int y=-1; y<=1; y++) {
-				// Create a dynamic offset for y*nx + x. Need to specify min and max offsets which
-				// we specify as min(0, maxOffset) and max(0, maxOffset)
 				int maxOffset = y * nxMax + x;
 				window[i] =  
 				((KernelMath.divMod(cnt.cast(dfeUInt(32))+1,nx.cast(dfeUInt(32))).getRemainder().cast(dfeInt(32)).eq(ok)&
@@ -55,16 +49,26 @@ class TwoDAverageDynamicKernel extends Kernel {
 			
 			    i++;
 			}
-
-		DFEVar res = constant.var(dfeInt(32), +10e15);
-		
+//median
+        DFEVar temp=err;
+        int j;
+        for(i=0; i<5; i++) {
+            for(j=i+1; j<9; j++) {
+                    DFEVar bool=window[j]<window[i];
+                    temp=bool?window[i]:temp;
+                    window[i] =bool?window[j]:window[i];
+                    window[j] =bool?temp:window[j];
+            }
+        }
+        res=window[4];
+/*
+//high(>)/low(<)
 		for (DFEVar dfeVar : window) {
-			res = (dfeVar<res)?dfeVar:res;
+			res = (dfeVar>res)?dfeVar:res;
 		}
-
-		//Output
+	*/
+        res = res<120?constant.var(dfeInt(32), 0):constant.var(dfeInt(32), 255);
 		io.output("outStream", res, dfeInt(32));
-
 		io.output("counter", cnt, dfeUInt(32));
 	}
 }
