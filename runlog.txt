@@ -35,9 +35,9 @@ Usage:
     ax25 (AMPR AX.25) netrom (AMPR NET/ROM) rose (AMPR ROSE) 
     ipx (Novell IPX) ddp (Appletalk DDP) ec (Econet) 
     ash (Ash) x25 (CCITT X.25) 
-make: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
-make -C ../RunRules/Simulation maxfiles/Vectors.max
-make[1]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
+make: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
+make -C ../RunRules/Simulation maxfiles/TwoDAverageDynamic.max
+make[1]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
 
 MaxCompiler Project Admin Tool Version 2015.2.00001
  Copyright Maxeler Technologies 2010 - 2015. All rights reserved.
@@ -47,15 +47,15 @@ Updating RunRule dependent Makefiles for RunRule 'Simulation'
 	Updating: Simulation
 Found makefiles: 1
 	Updated: Simulation
-make -f Makefile.rules maxfiles/Vectors.max
-make[2]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
-env  MAX_BUILDPARAMS=" DFEModel=MAIA  target=DFE_SIM  maxFileName=Vectors "  ant -v -f Vectors.xml
+make -f Makefile.rules maxfiles/TwoDAverageDynamic.max
+make[2]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
+env  MAX_BUILDPARAMS=" DFEModel=MAIA  target=DFE_SIM  maxFileName=TwoDAverageDynamic "  ant -v -f TwoDAverageDynamic.xml
 Apache Ant version 1.7.1 compiled on August 24 2010
-Buildfile: Vectors.xml
+Buildfile: TwoDAverageDynamic.xml
 Detected Java version: 1.6 in: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.38.x86_64/jre
 Detected OS: Linux
-parsing buildfile /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/Vectors.xml with URI = file:/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/Vectors.xml
-Project base dir set to: /home/a01463926/WebIDE-Projects/LinearCorrelation/EngineCode
+parsing buildfile /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/TwoDAverageDynamic.xml with URI = file:/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/TwoDAverageDynamic.xml
+Project base dir set to: /home/a01463926/WebIDE-Projects/EdgeSegmentation2/EngineCode
 [antlib:org.apache.tools.ant] Could not load definitions from resource org/apache/tools/ant/antlib.xml. It could not be found.
  [property] Loading Environment env.
 Property "-*-command-variables-*-" has not been set
@@ -66,77 +66,82 @@ Complete build sequence is [build, run, runresult, all, help, clean, jar, ]
 build:
 Detected Java version: 1.6 in: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.38.x86_64/jre
 Detected OS: Linux
-      [ant] calling target(s) [default] in build file /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/Vectors_Build.xml
-parsing buildfile /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/Vectors_Build.xml with URI = file:/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/Vectors_Build.xml
-Project base dir set to: /home/a01463926/WebIDE-Projects/LinearCorrelation/EngineCode
+      [ant] calling target(s) [default] in build file /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/TwoDAverageDynamic_Build.xml
+parsing buildfile /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/TwoDAverageDynamic_Build.xml with URI = file:/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/TwoDAverageDynamic_Build.xml
+Project base dir set to: /home/a01463926/WebIDE-Projects/EdgeSegmentation2/EngineCode
  [property] Loading Environment env.
 Property "-*-command-variables-*-" has not been set
 Property "env.MAXCOMPILERJCP" has not been set
-      [ant] Entering /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/Vectors_Build.xml...
+      [ant] Entering /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/TwoDAverageDynamic_Build.xml...
 Build sequence for target(s) `all' is [clean, build, all]
 Complete build sequence is [clean, build, all, ]
 
 clean:
-   [delete] Deleting directory /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist
-   [delete] Deleting /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist/bin/vectors/VectorsKernel.class
-   [delete] Deleting /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist/bin/vectors/VectorsManager.class
-   [delete] Deleting directory /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist/bin/vectors
-   [delete] Deleting directory /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist/bin
-   [delete] Deleting directory /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist
+   [delete] Deleting directory /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist
+   [delete] Deleting /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist/bin/twodaveragedynamic/TwoDAverageDynamicKernel.class
+   [delete] Deleting /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist/bin/twodaveragedynamic/TwoDAverageDynamicManager.class
+   [delete] Deleting /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist/bin/twodaveragedynamic/TwoDFilterTester.class
+   [delete] Deleting directory /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist/bin/twodaveragedynamic
+   [delete] Deleting directory /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist/bin
+   [delete] Deleting directory /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist
 
 build:
-    [mkdir] Created dir: /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist
-    [mkdir] Created dir: /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist/bin
+    [mkdir] Created dir: /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist
+    [mkdir] Created dir: /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist/bin
      [copy] No sources found.
 [maxjcompiler] 
 [maxjcompiler] 
-[maxjcompiler] Compiling to folder /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist/bin
+[maxjcompiler] Compiling to folder /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist/bin
 [maxjcompiler] 
 [maxjcompiler] Compiling files and folders:
-[maxjcompiler] /home/a01463926/WebIDE-Projects/LinearCorrelation/EngineCode/src
+[maxjcompiler] /home/a01463926/WebIDE-Projects/EdgeSegmentation2/EngineCode/src
 [maxjcompiler] 
 [maxjcompiler] Compiler options:
 [maxjcompiler] -noExit
 [maxjcompiler] -classpath
 [maxjcompiler] /opt/maxcompiler/lib/MaxCompiler.jar
 [maxjcompiler] -d
-[maxjcompiler] /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist/bin
+[maxjcompiler] /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist/bin
+[maxjcompiler] ----------
+[maxjcompiler] 1. WARNING in /home/a01463926/WebIDE-Projects/EdgeSegmentation2/EngineCode/src/twodaveragedynamic/TwoDAverageDynamicKernel.maxj (at line 15)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.*;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count is never used
+[maxjcompiler] ----------
+[maxjcompiler] 1 problem (1 warning)
 
 all:
-      [ant] Exiting /home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/Vectors_Build.xml.
+      [ant] Exiting /home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/TwoDAverageDynamic_Build.xml.
 
 run:
      [java] Executing '/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.38.x86_64/jre/bin/java' with arguments:
      [java] '-Xmx2048m'
      [java] '-classpath'
-     [java] '/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation/dist/bin:/opt/maxcompiler/lib/MaxCompiler.jar'
-     [java] 'vectors.VectorsManager'
+     [java] '/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation/dist/bin:/opt/maxcompiler/lib/MaxCompiler.jar'
+     [java] 'twodaveragedynamic.TwoDAverageDynamicManager'
      [java] 
      [java] The ' characters around the executable and arguments are
      [java] not part of the command.
      [java] Setting environment variable: MAXSOURCEDIRS=src
-     [java] Thu 15:00: MaxCompiler version: 2015.2
-     [java] Thu 15:00: Build "Vectors" start time: Thu May 10 15:00:44 UTC 2018
-     [java] Thu 15:00: Main build process running as user a01463926 on host f0a1eff72650
-     [java] Thu 15:00: Build location: /tmp/Vectors_MAIA_DFE_SIM
-     [java] Thu 15:00: Detailed build log available in "_build.log"
-     [java] Thu 15:00: Instantiating manager
-     [java] Thu 15:00: Instantiating kernel "VectorsKernel"
-     [java] Thu 15:00: Compiling manager (CPU I/O Only)
-     [java] Thu 15:00: 
-     [java] Thu 15:00: Compiling kernel "VectorsKernel"
-     [java] Thu 15:00: WARNING: Warning (UNCONNECTED_DESIGN_ELEMENT):
-     [java] Thu 15:00: WARNING: Unconnected elements in design 'VectorsKernel'
-     [java] Thu 15:00: WARNING: details in : /tmp/Vectors_MAIA_DFE_SIM/scratch/VectorsKernel_graph_warnings.txt
-     [java] Thu 15:00: WARNING: Warning (CONSTANT_ENCODING):
-     [java] Thu 15:00: WARNING: Precision loss occurred in some constant values.
-     [java] Thu 15:00: WARNING: For details see /tmp/Vectors_MAIA_DFE_SIM/scratch/VectorsKernel_constants_report.txt
-     [java] Thu 15:00: Running back-end simulation build (3 phases)
-     [java] Thu 15:00: (1/3) - Prepare MaxFile Data (GenerateMaxFileDataFile)
-     [java] Thu 15:00: (2/3) - Compile Simulation Modules (SimCompilePass)
-     [java] Thu 15:01: (3/3) - Generate MaxFile (AddSimObjectToMaxFilePass)
-     [java] Thu 15:01: MaxFile: /tmp/Vectors_MAIA_DFE_SIM/results/Vectors.max (MD5Sum: 422b2016bca0c76d01268a61f7a5d8be)
-     [java] Thu 15:01: Build completed: Thu May 10 15:01:04 UTC 2018 (took 19 secs)
+     [java] Fri 08:26: MaxCompiler version: 2015.2
+     [java] Fri 08:26: Build "TwoDAverageDynamic" start time: Fri Jun 01 08:26:46 UTC 2018
+     [java] Fri 08:26: Main build process running as user a01463926 on host a8e4abe31628
+     [java] Fri 08:26: Build location: /tmp/TwoDAverageDynamic_MAIA_DFE_SIM
+     [java] Fri 08:26: Detailed build log available in "_build.log"
+     [java] Fri 08:26: Instantiating manager
+     [java] Fri 08:26: Instantiating kernel "TwoDAverageDynamicKernel"
+     [java] Fri 08:26: Compiling manager (CPU I/O Only)
+     [java] Fri 08:26: 
+     [java] Fri 08:26: Compiling kernel "TwoDAverageDynamicKernel"
+     [java] Fri 08:26: WARNING: Warning (UNCONNECTED_DESIGN_ELEMENT):
+     [java] Fri 08:26: WARNING: Unconnected elements in design 'TwoDAverageDynamicKernel'
+     [java] Fri 08:26: WARNING: details in : /tmp/TwoDAverageDynamic_MAIA_DFE_SIM/scratch/TwoDAverageDynamicKernel_graph_warnings.txt
+     [java] Fri 08:26: Running back-end simulation build (3 phases)
+     [java] Fri 08:26: (1/3) - Prepare MaxFile Data (GenerateMaxFileDataFile)
+     [java] Fri 08:26: (2/3) - Compile Simulation Modules (SimCompilePass)
+     [java] Fri 08:26: (3/3) - Generate MaxFile (AddSimObjectToMaxFilePass)
+     [java] Fri 08:26: MaxFile: /tmp/TwoDAverageDynamic_MAIA_DFE_SIM/results/TwoDAverageDynamic.max (MD5Sum: b6b9574ac92c472d23265bdf5f943586)
+     [java] Fri 08:26: Build completed: Fri Jun 01 08:26:56 UTC 2018 (took 10 secs)
      [exec] Current OS is Linux
      [exec] Executing '/opt/maxcompiler//lib/MaxIDE/copyBuildResults.sh' with arguments:
      [exec] '-p'
@@ -151,98 +156,104 @@ runresult:
 all:
 
 BUILD SUCCESSFUL
-Total time: 21 seconds
-make[2]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
-make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
+Total time: 11 seconds
+make[2]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
+make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
 make -f Makefile.rules build
-make[1]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
-set -e; rm -f ../RunRules/Simulation/objects/c/VectorsCpuCode.d ;                                                             \
-	  cc -M -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/Simulation/include  -I '/opt/maxcompiler//include/slic'  -Wno-error VectorsCpuCode.c > ../RunRules/Simulation/objects/c/VectorsCpuCode.d.$$ ;                                 \
-      sed 's,\(VectorsCpuCode\)\.o[ :]*,../RunRules/Simulation/objects/c/\1.o ../RunRules/Simulation/objects/c/VectorsCpuCode.d : ,g' < ../RunRules/Simulation/objects/c/VectorsCpuCode.d.$$ > ../RunRules/Simulation/objects/c/VectorsCpuCode.d; \
-      rm -f ../RunRules/Simulation/objects/c/VectorsCpuCode.d.$$
-make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
-make[1]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
-"/opt/maxcompiler//bin/sliccompile" ../RunRules/Simulation/maxfiles/Vectors.max ../RunRules/Simulation/objects/maxfiles/slic_Vectors.o
-Processing maxfile for MAIA_SIM from '../RunRules/Simulation/maxfiles/Vectors.max'.
-/opt/maxcompiler//lib/clang/bin/start.sh clang -fgnu89-inline -pipe -O0 -std=gnu99 -Wall -Werror -frandom-seed=foo -Wno-unused-variable -Wno-unused-function -fPIC -I /opt/maxcompiler/include/slic -DMAXFILE_INC="/dev/null" -DSLIC_NO_DESTRUCTORS -c /tmp/sliccompile_3352391669999314549/cobject/max_8931884079173275564.c -o /tmp/sliccompile_3352391669999314549/cobject/max_8931884079173275564.c.o 
-/opt/maxcompiler//lib/clang/bin/start.sh clang -fgnu89-inline -pipe -O0 -std=gnu99 -Wall -Werror -frandom-seed=foo -Wno-unused-variable -Wno-unused-function -fPIC -I /opt/maxcompiler/include/slic -DMAXFILE_INC="/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode/../RunRules/Simulation/maxfiles/Vectors.max" -DSLIC_NO_DESTRUCTORS -c /opt/maxcompiler/src/slicinterface/MaxFileInit.c -o max_6656322641900484938.o 
-ld -r /tmp/sliccompile_3352391669999314549/cobject/max_8931884079173275564.c.o max_6656322641900484938.o -o slic_Vectors.o 
-Copying .max file C object into '/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode/../RunRules/Simulation/objects/maxfiles'
-cc -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/Simulation/include  -I '/opt/maxcompiler//include/slic'  -c VectorsCpuCode.c -o ../RunRules/Simulation/objects/c/VectorsCpuCode.o
-cc -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/Simulation/include  -I '/opt/maxcompiler//include/slic'  -o ../RunRules/Simulation/binaries/Vectors ../RunRules/Simulation/objects/maxfiles/slic_Vectors.o ../RunRules/Simulation/objects/c/VectorsCpuCode.o -g -O3  -L '/opt/maxcompiler//lib' -lslic -L '/opt/maxcompiler//lib/maxeleros-sim/lib' -lmaxeleros -lpthread -lm -lrt 
-make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[1]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
+set -e; rm -f ../RunRules/Simulation/objects/c/TwoDAverageDynamicCpuCode.d ;                                                             \
+	  cc -M -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/Simulation/include  -I '/opt/maxcompiler//include/slic'  -Wno-error TwoDAverageDynamicCpuCode.c > ../RunRules/Simulation/objects/c/TwoDAverageDynamicCpuCode.d.$$ ;                                 \
+      sed 's,\(TwoDAverageDynamicCpuCode\)\.o[ :]*,../RunRules/Simulation/objects/c/\1.o ../RunRules/Simulation/objects/c/TwoDAverageDynamicCpuCode.d : ,g' < ../RunRules/Simulation/objects/c/TwoDAverageDynamicCpuCode.d.$$ > ../RunRules/Simulation/objects/c/TwoDAverageDynamicCpuCode.d; \
+      rm -f ../RunRules/Simulation/objects/c/TwoDAverageDynamicCpuCode.d.$$
+make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
+make[1]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
+"/opt/maxcompiler//bin/sliccompile" ../RunRules/Simulation/maxfiles/TwoDAverageDynamic.max ../RunRules/Simulation/objects/maxfiles/slic_TwoDAverageDynamic.o
+Processing maxfile for MAIA_SIM from '../RunRules/Simulation/maxfiles/TwoDAverageDynamic.max'.
+/opt/maxcompiler//lib/clang/bin/start.sh clang -fgnu89-inline -pipe -O0 -std=gnu99 -Wall -Werror -frandom-seed=foo -Wno-unused-variable -Wno-unused-function -fPIC -I /opt/maxcompiler/include/slic -DMAXFILE_INC="/dev/null" -DSLIC_NO_DESTRUCTORS -c /tmp/sliccompile_6057772493024915507/cobject/max_5942340435276987695.c -o /tmp/sliccompile_6057772493024915507/cobject/max_5942340435276987695.c.o 
+/opt/maxcompiler//lib/clang/bin/start.sh clang -fgnu89-inline -pipe -O0 -std=gnu99 -Wall -Werror -frandom-seed=foo -Wno-unused-variable -Wno-unused-function -fPIC -I /opt/maxcompiler/include/slic -DMAXFILE_INC="/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode/../RunRules/Simulation/maxfiles/TwoDAverageDynamic.max" -DSLIC_NO_DESTRUCTORS -c /opt/maxcompiler/src/slicinterface/MaxFileInit.c -o max_7015764874950571797.o 
+ld -r /tmp/sliccompile_6057772493024915507/cobject/max_5942340435276987695.c.o max_7015764874950571797.o -o slic_TwoDAverageDynamic.o 
+Copying .max file C object into '/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode/../RunRules/Simulation/objects/maxfiles'
+cc -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/Simulation/include  -I '/opt/maxcompiler//include/slic'  -c TwoDAverageDynamicCpuCode.c -o ../RunRules/Simulation/objects/c/TwoDAverageDynamicCpuCode.o
+TwoDAverageDynamicCpuCode.c: In function 'getedges':
+TwoDAverageDynamicCpuCode.c:151: warning: statement with no effect
+TwoDAverageDynamicCpuCode.c: In function 'main':
+TwoDAverageDynamicCpuCode.c:172: warning: passing argument 3 of 'TwoDAverageDynamic' from incompatible pointer type
+../RunRules/Simulation/include/TwoDAverageDynamic.h:29: note: expected 'const float *' but argument is of type 'int32_t *'
+TwoDAverageDynamicCpuCode.c:172: warning: passing argument 5 of 'TwoDAverageDynamic' from incompatible pointer type
+../RunRules/Simulation/include/TwoDAverageDynamic.h:29: note: expected 'float *' but argument is of type 'int32_t *'
+cc -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/Simulation/include  -I '/opt/maxcompiler//include/slic'  -o ../RunRules/Simulation/binaries/TwoDAverageDynamic ../RunRules/Simulation/objects/maxfiles/slic_TwoDAverageDynamic.o ../RunRules/Simulation/objects/c/TwoDAverageDynamicCpuCode.o -g -O3  -L '/opt/maxcompiler//lib' -lslic -L '/opt/maxcompiler//lib/maxeleros-sim/lib' -lmaxeleros -lpthread -lm -lrt 
+make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 make startsim
-make[1]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[1]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 make -f Makefile.rules startsim
-make[2]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[2]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 make -C ../RunRules/Simulation startsim
-make[3]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
+make[3]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
 make -f Makefile.rules startsim
-make[4]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
-'/opt/maxcompiler//bin/maxcompilersim' -n maxcvectors -c MAIA -d 1  restart
+make[4]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
+'/opt/maxcompiler//bin/maxcompilersim' -n maxctwodavgdyn -c MAIA -d 1  restart
 
-Simulated system 'maxcvectors' started:
+Simulated system 'maxctwodavgdyn' started:
     Board:                   MAX4848A (default: 48GB RAM)
     RAM size for simulation: 51539607552 bytes.
     Temporary RAM file in    /tmp/. (Use option -k to preserve it.)
-    Simulation log:          /home/a01463926/.maxcompilersim/maxcvectors-f0a1eff72650.log
-    Daemon log:              /home/a01463926/.maxcompilersim/maxcvectors-f0a1eff72650_daemon.log
+    Simulation log:          /home/a01463926/.maxcompilersim/maxctwodavgdyn-a8e4abe31628.log
+    Daemon log:              /home/a01463926/.maxcompilersim/maxctwodavgdyn-a8e4abe31628_daemon.log
 
 Simulated devices available:
-    maxcvectors0:maxcvectors
+    maxctwodavgdyn0:maxctwodavgdyn
 
 To use simulated devices you need to set the environment variables
 LD_PRELOAD and MAXELEROSDIR. As LD_PRELOAD must not contain spaces,
 you might need to set LD_LIBRARY_PATH in addition (see the MaxCompiler
 tutorial for details).  Also, ensure that you add the correct simulated
-system name (namely "maxcvectors") to your SLiC configuration. The following
+system name (namely "maxctwodavgdyn") to your SLiC configuration. The following
 examples assume there are no spaces in LD_PRELOAD or SLIC_CONF.
 Example for BASH:
     export MAXELEROSDIR=$MAXCOMPILERDIR/lib/maxeleros-sim
     export LD_PRELOAD=$MAXELEROSDIR/lib/libmaxeleros.so:$LD_PRELOAD
-    export SLIC_CONF="$SLIC_CONF;use_simulation=maxcvectors"
+    export SLIC_CONF="$SLIC_CONF;use_simulation=maxctwodavgdyn"
 Example for CSH:
     setenv MAXELEROSDIR $MAXCOMPILERDIR/lib/maxeleros-sim
     setenv LD_PRELOAD $MAXELEROSDIR/lib/libmaxeleros.so:$LD_PRELOAD
-    setenv SLIC_CONF "$SLIC_CONF;use_simulation=maxcvectors"
+    setenv SLIC_CONF "$SLIC_CONF;use_simulation=maxctwodavgdyn"
 
-make[4]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
-make[3]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
-make[2]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
-make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[4]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
+make[3]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
+make[2]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
+make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 make run || { make stopsim; exit -1; }
-make[1]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[1]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 make -f Makefile.rules build
-make[2]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[2]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 make[2]: Nothing to be done for `build'.
-make[2]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[2]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 make -f Makefile.rules run
-make[2]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
-env MAXELEROSDIR="/opt/maxcompiler//lib/maxeleros-sim" LD_LIBRARY_PATH="/opt/maxcompiler//lib/maxeleros-sim/lib:$LD_LIBRARY_PATH" SLIC_CONF="use_simulation=maxcvectors;"   ../RunRules/Simulation/binaries/Vectors  
-Running DFE.
-r=0.246756
-r=-0.218304
-r=-0.078439
-r=0.101215
-make[2]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
-make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[2]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
+env MAXELEROSDIR="/opt/maxcompiler//lib/maxeleros-sim" LD_LIBRARY_PATH="/opt/maxcompiler//lib/maxeleros-sim/lib:$LD_LIBRARY_PATH" SLIC_CONF="use_simulation=maxctwodavgdyn;"   ../RunRules/Simulation/binaries/TwoDAverageDynamic  
+Loading image.
+Running Kernel.
+Saving image.
+Exiting
+make[2]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
+make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 make stopsim
-make[1]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[1]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 make -f Makefile.rules stopsim
-make[2]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[2]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 make -C ../RunRules/Simulation stopsim
-make[3]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
+make[3]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
 make -f Makefile.rules stopsim
-make[4]: Entering directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
-'/opt/maxcompiler//bin/maxcompilersim' -n maxcvectors -c MAIA -d 1  stop
-Terminating MaxelerOS daemon (PID 483)...
+make[4]: Entering directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
+'/opt/maxcompiler//bin/maxcompilersim' -n maxctwodavgdyn -c MAIA -d 1  stop
+Terminating MaxelerOS daemon (PID 406)...
 MaxelerOS daemon killed
-Terminating simulated system (PID 480)...
+Terminating simulated system (PID 403)...
 Simulated system killed
-make[4]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
-make[3]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/RunRules/Simulation'
-make[2]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
-make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
-make: Leaving directory `/home/a01463926/WebIDE-Projects/LinearCorrelation/CPUCode'
+make[4]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
+make[3]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/RunRules/Simulation'
+make[2]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
+make[1]: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
+make: Leaving directory `/home/a01463926/WebIDE-Projects/EdgeSegmentation2/CPUCode'
 Starting generating graphs...
 Graphs generated
